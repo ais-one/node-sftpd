@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'production'
+// process.env.NODE_ENV = 'production'
 
 const FtpSrv = require('ftp-srv');
 
@@ -24,7 +24,8 @@ ftpServer.on('login', ({ connection, username, password }, resolve, reject) => {
         connection.on('PASS', (error, fileName) => console.log('PASSxxx'));
         return resolve({ root: "/root/node-sftpd/data" });
     }
-    return reject(new errors.GeneralError('Invalid username or password', 401));
+    // return reject(new errors.GeneralError('Invalid username or password', 401));
+    return reject('Invalid username or password');
 });
 
 ftpServer.on('server-error', ({error}) => {

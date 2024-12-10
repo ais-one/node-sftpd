@@ -7,7 +7,7 @@ const ftpServer = new FtpSrv({
 });
 
 ftpServer.on('login', ({ connection, username, password }, resolve, reject) => { 
-    if(username === 'foo' && password === 'bar'){
+    if(username === 'foo' && password === 'foo'){
         connection.on('RTER', (error, fileName) => console.log('RTER', error));
         connection.on('RNTO', (error, fileName) => console.log('RNTO', error));
         connection.on('STOR', (error, fileName) => console.log('STOR', error));

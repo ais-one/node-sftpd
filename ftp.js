@@ -19,6 +19,8 @@ ftpServer.on('login', ({ connection, username, password }, resolve, reject) => {
         connection.on('SIZE', (error, fileName) => console.log('SIZE', error));
         connection.on('RNFR', (error, fileName) => console.log('RNFR', error));
         connection.on('MDTM', (error, fileName) => console.log('MDTM', error));
+        connection.on('PASS', (error, fileName) => console.log('PASSxxx'));
+        
         return resolve({ root: "/root/node-sftpd/data" });
     }
     return reject(new errors.GeneralError('Invalid username or password', 401));

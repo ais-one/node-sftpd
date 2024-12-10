@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'production'
+
 const FtpSrv = require('ftp-srv');
 
 const port=8005;

@@ -2,9 +2,9 @@
 
 const FtpSrv = require('ftp-srv');
 
-const port=8050;
+const port=8005;
 const ftpServer = new FtpSrv({
-    url: "ftp://192.168.31.198:" + port,
+    url: "ftp://0.0.0.0:" + port,
     anonymous: false
 });
 

@@ -13,7 +13,7 @@ const {
 
 // ssh-keygen -m PEM -b 2048 -t ed25519
 const keyName = 'keys/test';
-const port = 8089;
+const port = 8005;
 const username = 'foo';
 const password = 'bar';
 

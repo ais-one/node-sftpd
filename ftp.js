@@ -28,6 +28,9 @@ ftpServer.on('login', ({ connection, username, password }, resolve, reject) => {
 ftpServer.on('server-error', ({error}) => {
   console.log('vvvvvv->', error);
 });
+ftpServer.on('client-error', ({connection, context, error}) => {
+  console.log('CLIETNERROR ->', error);
+});
 
 ftpServer.listen().then(() => { 
     console.log('Ftp server is starting...')

@@ -10,11 +10,11 @@ const ftpServer = new FtpSrv({
 
 ftpServer.on('login', ({ connection, username, password }, resolve, reject) => { 
     if(username === 'foo' && password === 'foo'){
-        // connection.on('RTER', (error, fileName) => console.log('RTER', error));
-        // connection.on('RNTO', (error, fileName) => console.log('RNTO', error));
-        // connection.on('STOR', (error, fileName) => console.log('STOR', error));
+        connection.on('RTER', (error, fileName) => console.log('RTER', error));
+        connection.on('RNTO', (error, fileName) => console.log('RNTO', error));
+        connection.on('STOR', (error, fileName) => console.log('STOR', error));
         // connection.on('RNFR', (error, fileName) => console.log('RNFR', error));
-        // connection.on('PORT', (error, fileName) => console.log('PORT', error));
+        connection.on('PORT', (error, fileName) => console.log('PORTXX', error));
         // connection.on('LIST', (error, fileName) => console.log('LIST', error));
         // connection.on('NLST', (error, fileName) => console.log('NLST', error));
         // connection.on('STAT', (error, fileName) => console.log('STAT', error));

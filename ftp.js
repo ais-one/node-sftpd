@@ -8,7 +8,16 @@ const ftpServer = new FtpSrv({
 
 ftpServer.on('login', ({ connection, username, password }, resolve, reject) => { 
     if(username === 'foo' && password === 'bar'){
-        return resolve({ root:"." });    
+        connection.on('RTER', (error, fileName) => {
+          console.log('RTER', error)
+        });
+        connection.on('RNTO', (error, fileName) => {
+          console.log('RNTO', error)
+        });
+        connection.on('STOR', (error, fileName) => {
+          console.log('STOR', error)
+        });
+        return resolve({ root: "/root/node-sftpd" });
     }
     return reject(new errors.GeneralError('Invalid username or password', 401));
 });

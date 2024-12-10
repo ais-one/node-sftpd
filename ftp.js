@@ -14,14 +14,13 @@ ftpServer.on('login', ({ connection, username, password }, resolve, reject) => {
         connection.on('RNTO', (error, fileName) => console.log('RNTO', error));
         connection.on('STOR', (error, fileName) => console.log('STOR', error));
         connection.on('RNFR', (error, fileName) => console.log('RNFR', error));
-        connection.on('PORT', (error, fileName) => console.log('PORT', error));
-        connection.on('LIST', (error, fileName) => console.log('LIST', error));
-        connection.on('NLST', (error, fileName) => console.log('NLST', error));
-        connection.on('STAT', (error, fileName) => console.log('STAT', error));
-        connection.on('SIZE', (error, fileName) => console.log('SIZE', error));
-        connection.on('RNFR', (error, fileName) => console.log('RNFR', error));
-        connection.on('MDTM', (error, fileName) => console.log('MDTM', error));
-        connection.on('PASS', (error, fileName) => console.log('PASSxxx'));
+        // connection.on('PORT', (error, fileName) => console.log('PORT', error));
+        // connection.on('LIST', (error, fileName) => console.log('LIST', error));
+        // connection.on('NLST', (error, fileName) => console.log('NLST', error));
+        // connection.on('STAT', (error, fileName) => console.log('STAT', error));
+        // connection.on('SIZE', (error, fileName) => console.log('SIZE', error));
+        // connection.on('RNFR', (error, fileName) => console.log('RNFR', error));
+        // connection.on('MDTM', (error, fileName) => console.log('MDTM', error));
         return resolve({ root: "/root/node-sftpd/data" });
     }
     // return reject(new errors.GeneralError('Invalid username or password', 401));

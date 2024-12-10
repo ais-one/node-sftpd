@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "ftp-srv": "^4.6.3",
     "ssh2": "^1.16.0"
   }
 }
